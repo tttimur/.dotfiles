@@ -1,0 +1,34 @@
+
+alias des="cd ~/Desktop/"
+alias sites="cd ~/Sites/ && ls -la"
+alias ..="cd .."
+alias ...="cd ..."
+
+#edit zshrc configs
+
+alias zshrc="s ~/.zshrc"
+
+#sublime
+
+alias s="subl"
+
+#git  
+
+alias git="hub"
+
+# list 
+
+alias l="ls -la"
+
+#edit aliases
+
+alias als="subl ~/.dotfiles/.alias"
+alias func="subl ~/.dotfiles/.functions"
+
+# Reload the shell (i.e. invoke as a login shell)
+alias reload="exec $SHELL -l"
+
+# start .ngrok
+
+alias ngrok="~/Desktop/.ngrok" 
+

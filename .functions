@@ -1,0 +1,59 @@
+
+# new project template test...
+
+# new---proj() {
+#   echo "New project name:"
+#   read newdir
+#     if [ ! -d $newdir ]; then
+#       git=template-for-real
+#       git clone https://lofisport@bitbucket.org/lofisport/$git.git
+#       predir=$(pwd)
+#       mv $git $predir/$newdir;
+#     else
+#       echo "Directory already exists"
+#     fi
+#   echo "Would you like me to open brackets in this directory?"		
+#   read a
+#     if [ $a = "y" ] || [ $a = "Y" ] || [ $a = "" ]; then
+#       brackets $newdir
+# 			cd $newdir
+#     fi
+# }
+
+# improved template copy
+
+newproj() {
+  dir=$1
+  if [ ! -d $dir ]; then
+    dir=$1
+    cp -a ~/Sites/Template-3 ./
+    mv Template-3 $dir
+    cd $dir
+    rm -rf .git
+    git init
+    ls -la 
+    echo "## $dir"  > readme.md
+  else 
+    echo "directory already exists..."
+  fi
+} 
+
+# git add ., commit msg, git push origin master
+
+go() {
+  if [ $# -eq 0 ]; then 
+    echo 'Enter your commit message'
+  else
+    commit=$1
+    git add .
+    gcmsg $commit
+    gp origin master
+  fi
+ }
+
+ # cd into finder
+
+cdf() { 
+  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
+} 
+
