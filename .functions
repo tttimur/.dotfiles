@@ -55,5 +55,13 @@ go() {
 
 cdf() { 
   cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
-} 
+}
+
+#change wallpapers 
+
+function wallpaper() {
+  files=(~/Pictures/*)
+  ranImg="${files[RANDOM % ${#files[@]}]}"
+  sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$ranImg'" && killall Dock 
+}
 

@@ -3,7 +3,9 @@ alias des="cd ~/Desktop/"
 alias sites="cd ~/Sites/ && ls -la"
 alias ..="cd .."
 alias ...="cd ..."
-
+alias screen="cd ~/Pictures/screenshots && open ." 
+alias o="open"
+alias trsh="rm -rf ~/.Trash"
 #edit zshrc configs
 
 alias zshrc="s ~/.zshrc"
